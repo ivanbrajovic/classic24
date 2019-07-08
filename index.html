@@ -3,49 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    
     <style></style>
     <script src="./lib/hyperhtml.js"></script>
   </head>
   <body>
-    <script>
-      /////////////////////
-      window.FUN_ = [];
+    
+   <div id="app"></div>
 
-      let pause = Nm => {
-        fetch("../list.json")
-          .then(response => response.json())
-          .then(item_ => (FUN_ = item_));
-
-        let now = new Date();
-        let exitTime = now.getTime() + Nm;
-
-        while (true) {
-          now = new Date();
-          if (now.getTime() > exitTime) return;
-        }
-      };
-      pause(3333);
-      window.funfrom = (t, IMAGES___) =>
-        FUN_.filter(n => (IMAGES___ ? n.compos_ : n.title) === t).map(n =>
-          n.duration.map((T_, T) => ({
-            colorScheme: n.colorScheme,
-            compos_: n.compos_,
-            duration: T_,
-            image: IMAGES___ ? n.composerimage_ : n.image__,
-            name: n.name[T],
-            period_: n.period_,
-            src: n.src[T],
-            title: n.title
-          }))
-        );
-      //
-      //
-      //
-    </script>
-
-    <div id="app"></div>
-
-    <script src="./dist/main.bundle.js"></script>
-    <!--  -->
+   <script src="./dist/main.bundle.js"></script>
   </body>
 </html>
